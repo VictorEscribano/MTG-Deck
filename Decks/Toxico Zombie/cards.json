@@ -1,0 +1,90 @@
+[
+    {
+        "id": "e3a33b71-e40f-442b-855d-54766641b4f8",
+        "name": "Toxic Nim",
+        "mana_cost": "{4}{B}{B}",
+        "type_line": "Creature \u2014 Phyrexian Zombie",
+        "oracle_text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\n{B}: Regenerate Toxic Nim.",
+        "count": 1
+    },
+    {
+        "id": "9712623e-6f2e-4196-81ad-e8d896a0ab8a",
+        "name": "Reaper of Sheoldred",
+        "mana_cost": "{4}{B}",
+        "type_line": "Creature \u2014 Phyrexian Horror",
+        "oracle_text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever a source deals damage to Reaper of Sheoldred, that source's controller gets a poison counter.",
+        "count": 1
+    },
+    {
+        "id": "0e0a2899-0415-4a39-a8fd-496acb4d02c6",
+        "name": "Reap the Seagraf",
+        "mana_cost": "{2}{B}",
+        "type_line": "Sorcery",
+        "oracle_text": "Create a 2/2 black Zombie creature token.\nFlashback {4}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+        "count": 1
+    },
+    {
+        "id": "cd8ea309-7b1e-42fb-93df-1ce9ffb6a5c8",
+        "name": "Ghoulraiser",
+        "mana_cost": "{1}{B}{B}",
+        "type_line": "Creature \u2014 Zombie",
+        "oracle_text": "When Ghoulraiser enters the battlefield, return a Zombie card at random from your graveyard to your hand.",
+        "count": 1
+    },
+    {
+        "id": "6c327b9e-2bdc-4305-8d0e-f6a9cb2d6821",
+        "name": "Gravepurge",
+        "mana_cost": "{2}{B}",
+        "type_line": "Instant",
+        "oracle_text": "Put any number of target creature cards from your graveyard on top of your library.\nDraw a card.",
+        "count": 1
+    },
+    {
+        "id": "509f6e23-82b2-4fea-8467-6e8e2add9ef6",
+        "name": "Sightless Ghoul",
+        "mana_cost": "{3}{B}",
+        "type_line": "Creature \u2014 Zombie Soldier",
+        "oracle_text": "Sightless Ghoul can't block.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
+        "count": 1
+    },
+    {
+        "id": "91fb53f8-fdf6-446d-b050-662efa0ff9a9",
+        "name": "Black Cat",
+        "mana_cost": "{1}{B}",
+        "type_line": "Creature \u2014 Zombie Cat",
+        "oracle_text": "When Black Cat dies, target opponent discards a card at random.",
+        "count": 1
+    },
+    {
+        "id": "2f3544b1-8505-4ba7-807e-092a0321d729",
+        "name": "Highborn Ghoul",
+        "mana_cost": "{B}{B}",
+        "type_line": "Creature \u2014 Zombie",
+        "oracle_text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)",
+        "count": 1
+    },
+    {
+        "id": "7ea8c95d-20a4-409e-ac2b-a44e8c1edfa4",
+        "name": "Abattoir Ghoul",
+        "mana_cost": "{3}{B}",
+        "type_line": "Creature \u2014 Zombie",
+        "oracle_text": "First strike\nWhenever a creature dealt damage by Abattoir Ghoul this turn dies, you gain life equal to that creature's toughness.",
+        "count": 1
+    },
+    {
+        "id": "d99bd468-e043-4e45-8d01-6165a5972963",
+        "name": "Tragic Slip",
+        "mana_cost": "{B}",
+        "type_line": "Instant",
+        "oracle_text": "Target creature gets -1/-1 until end of turn.\nMorbid \u2014 That creature gets -13/-13 until end of turn instead if a creature died this turn.",
+        "count": 1
+    },
+    {
+        "id": "1bffe2e9-2d7a-4728-85f4-60f6ffe695d5",
+        "name": "Sorin's Thirst",
+        "mana_cost": "{B}{B}",
+        "type_line": "Instant",
+        "oracle_text": "Sorin's Thirst deals 2 damage to target creature and you gain 2 life.",
+        "count": 1
+    }
+]
