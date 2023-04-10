@@ -14,7 +14,7 @@ To use this tool, you need to have Python 3 installed on your computer. Once you
 
 This will output 2 .json files, one for the cards related to creatures, artifacts, spells, etc. and other json for the lands.
 Also a .png of the card balance will be created:
-![Mana curve](mana_curve.png)
+![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Jumpstart%20de%20Golems/deck.png)
 
 
 
