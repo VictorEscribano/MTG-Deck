@@ -16,6 +16,8 @@ This will output 2 .json files, one for the cards related to creatures, artifact
 Also a .png of the card balance will be created:
 ![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Jumpstart%20de%20Golems/deck.png)
 
+![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Toxico%20Zombie/deck.png)
+
 
 
 ## Future work
