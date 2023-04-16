@@ -1,0 +1,54 @@
+[
+    {
+        "url": "https://cards.scryfall.io/large/front/e/9/e923033f-6375-4e38-9197-adf95f3ceff3.jpg?1645508920",
+        "name": "Cieno depredador",
+        "mana_cost": "{G}{G}{G}",
+        "cmc": 3.0,
+        "type_line": "Creature \u2014 Ooze",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [
+            "Indestructible"
+        ],
+        "printed_text": "Indestructible.\nSiempre que el Cieno depredador ataque, pon un contador +1/+1 sobre \u00e9l.\nSiempre que una criatura que haya recibido da\u00f1o del Cieno depredador este turno muera, pon un contador +1/+1 sobre el Cieno depredador.",
+        "count": 2
+    },
+    {
+        "url": "https://cards.scryfall.io/large/front/3/2/32f45d16-0713-4b15-a6b0-a98c0b0bcf02.jpg?1677110458",
+        "name": "Bosque",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Basic Land \u2014 Forest",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": null,
+        "count": 4
+    },
+    {
+        "url": "https://cards.scryfall.io/large/front/e/9/e923033f-6375-4e38-9197-adf95f3ceff3.jpg?1645508920",
+        "name": "Cieno depredador",
+        "mana_cost": "{G}{G}{G}",
+        "cmc": 3.0,
+        "type_line": "Creature \u2014 Ooze",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [
+            "Indestructible"
+        ],
+        "printed_text": "Indestructible.\nSiempre que el Cieno depredador ataque, pon un contador +1/+1 sobre \u00e9l.\nSiempre que una criatura que haya recibido da\u00f1o del Cieno depredador este turno muera, pon un contador +1/+1 sobre el Cieno depredador.",
+        "count": 2
+    },
+    {
+        "url": "https://cards.scryfall.io/large/front/3/2/32f45d16-0713-4b15-a6b0-a98c0b0bcf02.jpg?1677110458",
+        "name": "Bosque",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Basic Land \u2014 Forest",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": null,
+        "count": 4
+    }
+]
