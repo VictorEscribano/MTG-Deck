@@ -13,8 +13,17 @@ To use this tool, you need to have Python 3 installed on your computer. Once you
 ## Results
 
 This will output 2 .json files, one for the cards related to creatures, artifacts, spells, etc. and other json for the lands.
-Also a .png of the card balance will be created:
-![Mana curve](mana_curve.png)
+Also a .png of the card balance will be created.
+Here we can see a Jumpstart Golem deck and apreciate the balance of mana cost:
+
+![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Jumpstart%20de%20Golems/deck.png)
+
+The same with this Toxic/Zombie jumpstart Deck:
+![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Toxico%20Zombie/deck.png)
+
+On the other hand this Triton jumpstart Deck is not balanced as it has too few low mana cost cards and too many mid cost ones:
+![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Tritones/deck.png)
+
 
 
 
