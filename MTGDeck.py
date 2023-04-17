@@ -26,7 +26,7 @@ class MagicDeck:
 
 
     def add_card(self, card_name, num, save_card_image=True):
-
+        
         response = requests.get(f"https://api.scryfall.com/cards/named?fuzzy={card_name}")
         if response.status_code != 200:
             print(f"Error: Card '{card_name}' not found")
