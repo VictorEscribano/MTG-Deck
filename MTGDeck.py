@@ -171,17 +171,3 @@ class MagicDeck:
         #load a .json
         with open(f"Decks/{self.name}/deck_cards.json", "r") as file:
             self.cards = json.load(file)
-
-
-# deck = MagicDeck("Test")
-
-# # Add some cards to the deck
-# deck.add_card("nim toxico", 1)
-# deck.add_card("cieno depredador", 2)
-# deck.add_card("bosque", 4)
-# deck.remove_card('Nim tóxico')
-
-
-# deck.generate_image()
-
-# deck.save_deck()
