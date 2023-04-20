@@ -33,7 +33,7 @@ class MagicDeck:
             return
         
         data = json.loads(response.content)
-        print('Adding {}...'.format(data.get("printed_name")))
+        
         #load the desired data in a json
         card_data = {
                 "url": data['image_uris']['large'],
@@ -72,6 +72,29 @@ class MagicDeck:
             image.save(f"{self.card_images_PATH}{card_name}.png")
             #print(f"Image saved as '{self.card_images_PATH}{card_name}.png'")
 
+        self.save_deck()
+        print('{} added'.format(data.get("printed_name")))
+        print(self.cards)
+
+    def remove_card(self, card_name):
+        for card in self.cards:
+            if card.get("name") == card_name:
+                print('Removing {}...'.format(card.get("name")))
+                if card.get("count") > 1:
+                    card["count"] -= 1
+                else:
+                    self.cards.remove(card)
+                return
+
+    def count_cards(self, card_name):
+        print(self.cards)
+        for card in self.cards:
+            print(card.get("name"))
+            if card.get("name") == card_name:
+                return card.get("count")
+            else:
+                return 0
+        
 
     def save_deck(self):
         with open(f"Decks/{self.name}/deck_cards.json", "w") as file:
@@ -120,6 +143,7 @@ class MagicDeck:
         else:
             print("Error: No card images found")
 
+        return combined_image
 
     def combine_images(self, images, orientation, width=None):
         if not images:
@@ -155,16 +179,6 @@ class MagicDeck:
             raise ValueError(f"Invalid orientation: {orientation}")
 
         return combined_image
-
-    def remove_card(self, card_name):
-        for card in self.cards:
-            if card.get("name") == card_name:
-                print('Removing {}...'.format(card.get("name")))
-                if card.get("count") > 1:
-                    card["count"] -= 1
-                else:
-                    self.cards.remove(card)
-                return
 
 
     def load_deck(self):
