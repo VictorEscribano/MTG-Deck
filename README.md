@@ -4,11 +4,11 @@ With this code, you can load a list of cards from a file and generate a graphica
 
 ## Usage
 
-To use this tool, you need to have Python 3 installed on your computer. Once you have Python installed, follow these steps:
+Follow these steps:
 
 1. Clone this repository to your local machine.
 2. Install the required dependencies by running `pip install -r requirements.txt`.
-3. fill the test_deck.py with the names of your cards (avoid symbols)
+3. Fill the test_deck.py with the names of your cards (avoid symbols). You can use this code as an example of usage of the class functions.
 
 ## Results
 

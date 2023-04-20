@@ -26,7 +26,7 @@ class MagicDeck:
 
 
     def add_card(self, card_name, num, save_card_image=True):
-
+        
         response = requests.get(f"https://api.scryfall.com/cards/named?fuzzy={card_name}")
         if response.status_code != 200:
             print(f"Error: Card '{card_name}' not found")
@@ -185,17 +185,3 @@ class MagicDeck:
         #load a .json
         with open(f"Decks/{self.name}/deck_cards.json", "r") as file:
             self.cards = json.load(file)
-
-
-# deck = MagicDeck("Test")
-
-# # Add some cards to the deck
-# deck.add_card("nim toxico", 1)
-# deck.add_card("cieno depredador", 2)
-# deck.add_card("bosque", 4)
-# deck.remove_card('Nim tóxico')
-
-
-# deck.generate_image()
-
-# deck.save_deck()
