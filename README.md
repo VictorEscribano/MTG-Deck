@@ -15,7 +15,7 @@ Follow these steps:
 
 The program has a simple and easy to use interface:
 <img src="https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/{your deck name}/mana_curve.png" width="500" height="400">
-![Mana curve](img)
+
 
 
 ## Results
