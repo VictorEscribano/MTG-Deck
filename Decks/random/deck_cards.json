@@ -1,0 +1,152 @@
+[
+    {
+        "url": "https://cards.scryfall.io/small/front/e/9/e923033f-6375-4e38-9197-adf95f3ceff3.jpg?1645508920",
+        "name": "Cieno depredador",
+        "mana_cost": "{G}{G}{G}",
+        "cmc": 3.0,
+        "type_line": "Creature \u2014 Ooze",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [
+            "Indestructible"
+        ],
+        "printed_text": "Indestructible.\nSiempre que el Cieno depredador ataque, pon un contador +1/+1 sobre \u00e9l.\nSiempre que una criatura que haya recibido da\u00f1o del Cieno depredador este turno muera, pon un contador +1/+1 sobre el Cieno depredador.",
+        "count": 4
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/e/3/e3a33b71-e40f-442b-855d-54766641b4f8.jpg?1562882251",
+        "name": "Nim t\u00f3xico",
+        "mana_cost": "{4}{B}{B}",
+        "cmc": 6.0,
+        "type_line": "Creature \u2014 Phyrexian Zombie",
+        "power": "4",
+        "toughness": "1",
+        "keywords": [
+            "Infect"
+        ],
+        "printed_text": "Infectar. (Esta criatura hace da\u00f1o a las criaturas en forma de contadores -1/-1 y a los jugadores en forma de contadores de veneno.)\n{B}: Regenera al Nim t\u00f3xico.",
+        "count": 3
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/f/0/f0bf48b8-e3df-4269-beed-50144073a5da.jpg?1682002064",
+        "name": "Bosque",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Basic Land \u2014 Forest",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": null,
+        "count": 20
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/e/c/ec41a439-8aaf-4675-9fd8-b9ed0f427ddf.jpg?1562561520",
+        "name": "Cosecha dadivosa",
+        "mana_cost": "{4}{G}",
+        "cmc": 5.0,
+        "type_line": "Sorcery",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "Ganas 1 vida por cada tierra que controles.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/2/7/273bbd58-6048-4cf9-a216-bc51166ed22e.jpg?1562876148",
+        "name": "Espada de guerra y paz",
+        "mana_cost": "{3}",
+        "cmc": 3.0,
+        "type_line": "Artifact \u2014 Equipment",
+        "power": null,
+        "toughness": null,
+        "keywords": [
+            "Equip"
+        ],
+        "printed_text": "La criatura equipada obtiene +2/+2 y tiene protecci\u00f3n contra rojo y contra blanco.\nSiempre que la criatura equipada haga da\u00f1o de combate a un jugador, la Espada de guerra y paz hace da\u00f1o a ese jugador igual a la cantidad de cartas en su mano y t\u00fa ganas 1 vida por cada carta en tu mano.\nEquipar {2}.",
+        "count": 3
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/d/c/dc90d632-fc78-4ae6-83c6-314ee5744de5.jpg?1562268361",
+        "name": "Precursor Golem",
+        "mana_cost": "{5}",
+        "cmc": 5.0,
+        "type_line": "Artifact Creature \u2014 Golem",
+        "power": "3",
+        "toughness": "3",
+        "keywords": [],
+        "printed_text": "When Precursor Golem enters the battlefield, create two 3/3 colorless Golem artifact creature tokens.\nWhenever a player casts an instant or sorcery spell that targets only a single Golem, that player copies that spell for each other Golem that spell could target. Each copy targets a different one of those Golems.",
+        "count": 3
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/3/6/36eb220b-9410-452c-9164-5f516aefd245.jpg?1645472243",
+        "name": "Myr de oro",
+        "mana_cost": "{2}",
+        "cmc": 2.0,
+        "type_line": "Artifact Creature \u2014 Myr",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "{T}: Agrega {W}.",
+        "count": 3
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/f/9/f9cca423-baf7-42d3-978e-47b72122e0f8.jpg?1645474664",
+        "name": "Myr de plata",
+        "mana_cost": "{2}",
+        "cmc": 2.0,
+        "type_line": "Artifact Creature \u2014 Myr",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "{T}: Agrega {U}.",
+        "count": 2
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/5/c/5cd9a145-86cc-4591-b64b-c003eaa926eb.jpg?1675455578",
+        "name": "Ragavan",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Token Legendary Creature \u2014 Monkey",
+        "power": "2",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "",
+        "count": 2
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/b/d/bd511c6c-a6ec-4715-94c0-945c091d82b1.jpg?1681053639",
+        "name": "Myr",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Token Artifact Creature \u2014 Myr",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "",
+        "count": 2
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/5/7/57514ccf-bec6-4baa-b8ff-af15ead279ca.jpg?1539714538",
+        "name": "Pantano",
+        "mana_cost": "{2}{B}",
+        "cmc": 3.0,
+        "type_line": "Enchantment",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": null,
+        "count": 16
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/b/d/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd.jpg?1614638838",
+        "name": "Black Lotus",
+        "mana_cost": "{0}",
+        "cmc": 0.0,
+        "type_line": "Artifact",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "{T}, Sacrifice Black Lotus: Add three mana of any one color.",
+        "count": 3
+    }
+]

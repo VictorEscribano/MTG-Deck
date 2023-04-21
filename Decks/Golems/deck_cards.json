@@ -1,0 +1,124 @@
+[
+    {
+        "url": "https://cards.scryfall.io/small/front/3/d/3dac9526-388d-487e-a790-066f83050794.jpg?1680759060",
+        "name": "Blade Splicer",
+        "mana_cost": "{2}{W}",
+        "cmc": 3.0,
+        "type_line": "Creature \u2014 Phyrexian Human Artificer",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "When Blade Splicer enters the battlefield, create a 3/3 colorless Phyrexian Golem artifact creature token.\nGolems you control have first strike.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/8/c/8cf185b3-2285-41cf-97a5-4226c68d044e.jpg?1680759097",
+        "name": "Master Splicer",
+        "mana_cost": "{3}{W}",
+        "cmc": 4.0,
+        "type_line": "Creature \u2014 Phyrexian Human Artificer",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "When Master Splicer enters the battlefield, create a 3/3 colorless Phyrexian Golem artifact creature token.\nGolems you control get +1/+1.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/d/c/dc90d632-fc78-4ae6-83c6-314ee5744de5.jpg?1562268361",
+        "name": "Precursor Golem",
+        "mana_cost": "{5}",
+        "cmc": 5.0,
+        "type_line": "Artifact Creature \u2014 Golem",
+        "power": "3",
+        "toughness": "3",
+        "keywords": [],
+        "printed_text": "When Precursor Golem enters the battlefield, create two 3/3 colorless Golem artifact creature tokens.\nWhenever a player casts an instant or sorcery spell that targets only a single Golem, that player copies that spell for each other Golem that spell could target. Each copy targets a different one of those Golems.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/3/0/304bc0a2-0cf4-4609-a0fc-de933402c64a.jpg?1562428872",
+        "name": "Phyrexian Hulk",
+        "mana_cost": "{6}",
+        "cmc": 6.0,
+        "type_line": "Artifact Creature \u2014 Phyrexian Golem",
+        "power": "5",
+        "toughness": "4",
+        "keywords": [],
+        "printed_text": "",
+        "count": 2
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/c/b/cba5fc44-4b9a-418b-a4e0-26d2c3a1eca4.jpg?1562659788",
+        "name": "Rusted Sentinel",
+        "mana_cost": "{4}",
+        "cmc": 4.0,
+        "type_line": "Artifact Creature \u2014 Golem",
+        "power": "3",
+        "toughness": "4",
+        "keywords": [],
+        "printed_text": "Rusted Sentinel enters the battlefield tapped.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/4/4/441a3345-2507-46ed-bdb3-c5c45d17da51.jpg?1608911433",
+        "name": "Golem Artisan",
+        "mana_cost": "{5}",
+        "cmc": 5.0,
+        "type_line": "Artifact Creature \u2014 Golem",
+        "power": "3",
+        "toughness": "3",
+        "keywords": [],
+        "printed_text": "{2}: Target artifact creature gets +1/+1 until end of turn.\n{2}: Target artifact creature gains your choice of flying, trample, or haste until end of turn.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/1/b/1b4de70a-729b-4566-b6f3-c76f551405a5.jpg?1592517753",
+        "name": "Stone Golem",
+        "mana_cost": "{5}",
+        "cmc": 5.0,
+        "type_line": "Artifact Creature \u2014 Golem",
+        "power": "4",
+        "toughness": "4",
+        "keywords": [],
+        "printed_text": "",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/0/a/0aa1b193-c80e-4026-bd82-f16314e14431.jpg?1608917838",
+        "name": "Mask of Avacyn",
+        "mana_cost": "{2}",
+        "cmc": 2.0,
+        "type_line": "Artifact \u2014 Equipment",
+        "power": null,
+        "toughness": null,
+        "keywords": [
+            "Equip"
+        ],
+        "printed_text": "Equipped creature gets +1/+2 and has hexproof. (It can't be the target of spells or abilities your opponents control.)\nEquip {3}",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/7/f/7ffe86e1-ad47-4ccb-aa55-119dc681d370.jpg?1562819575",
+        "name": "Vector Asp",
+        "mana_cost": "{1}",
+        "cmc": 1.0,
+        "type_line": "Artifact Creature \u2014 Phyrexian Snake",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "{B}: Vector Asp gains infect until end of turn. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/0/0/00bf269d-aca3-494c-8777-de90ae903af2.jpg?1680827534",
+        "name": "Plains",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Basic Land \u2014 Plains",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "({T}: Add {W}.)",
+        "count": 8
+    }
+]

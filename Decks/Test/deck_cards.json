@@ -1,54 +1,16 @@
 [
     {
-        "url": "https://cards.scryfall.io/large/front/e/9/e923033f-6375-4e38-9197-adf95f3ceff3.jpg?1645508920",
-        "name": "Cieno depredador",
-        "mana_cost": "{G}{G}{G}",
-        "cmc": 3.0,
-        "type_line": "Creature \u2014 Ooze",
-        "power": "1",
+        "url": "https://cards.scryfall.io/small/front/e/3/e3a33b71-e40f-442b-855d-54766641b4f8.jpg?1562882251",
+        "name": "Nim t\u00f3xico",
+        "mana_cost": "{4}{B}{B}",
+        "cmc": 6.0,
+        "type_line": "Creature \u2014 Phyrexian Zombie",
+        "power": "4",
         "toughness": "1",
         "keywords": [
-            "Indestructible"
+            "Infect"
         ],
-        "printed_text": "Indestructible.\nSiempre que el Cieno depredador ataque, pon un contador +1/+1 sobre \u00e9l.\nSiempre que una criatura que haya recibido da\u00f1o del Cieno depredador este turno muera, pon un contador +1/+1 sobre el Cieno depredador.",
-        "count": 2
-    },
-    {
-        "url": "https://cards.scryfall.io/large/front/3/2/32f45d16-0713-4b15-a6b0-a98c0b0bcf02.jpg?1677110458",
-        "name": "Bosque",
-        "mana_cost": "",
-        "cmc": 0.0,
-        "type_line": "Basic Land \u2014 Forest",
-        "power": null,
-        "toughness": null,
-        "keywords": [],
-        "printed_text": null,
-        "count": 4
-    },
-    {
-        "url": "https://cards.scryfall.io/large/front/e/9/e923033f-6375-4e38-9197-adf95f3ceff3.jpg?1645508920",
-        "name": "Cieno depredador",
-        "mana_cost": "{G}{G}{G}",
-        "cmc": 3.0,
-        "type_line": "Creature \u2014 Ooze",
-        "power": "1",
-        "toughness": "1",
-        "keywords": [
-            "Indestructible"
-        ],
-        "printed_text": "Indestructible.\nSiempre que el Cieno depredador ataque, pon un contador +1/+1 sobre \u00e9l.\nSiempre que una criatura que haya recibido da\u00f1o del Cieno depredador este turno muera, pon un contador +1/+1 sobre el Cieno depredador.",
-        "count": 2
-    },
-    {
-        "url": "https://cards.scryfall.io/large/front/3/2/32f45d16-0713-4b15-a6b0-a98c0b0bcf02.jpg?1677110458",
-        "name": "Bosque",
-        "mana_cost": "",
-        "cmc": 0.0,
-        "type_line": "Basic Land \u2014 Forest",
-        "power": null,
-        "toughness": null,
-        "keywords": [],
-        "printed_text": null,
-        "count": 4
+        "printed_text": "Infectar. (Esta criatura hace da\u00f1o a las criaturas en forma de contadores -1/-1 y a los jugadores en forma de contadores de veneno.)\n{B}: Regenera al Nim t\u00f3xico.",
+        "count": 7
     }
 ]

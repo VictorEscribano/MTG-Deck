@@ -3,26 +3,14 @@ import os
 import requests
 from PIL import Image
 from io import BytesIO
+import matplotlib.pyplot as plt
+import numpy as np
 
 class MagicDeck:
     def __init__(self, name):
         self.name = name
         self.cards = []
         self.card_images_PATH = f"Decks/{self.name}/card_images/"
-
-        # Create the directory if it does not exist
-        if not os.path.exists(f"Decks/{self.name}"):
-            os.makedirs(f"Decks/{self.name}")
-
-        else:
-            print('{} already exists.'.format(f"Decks/{self.name}"))
-            input('Do you want to remove the existing one? (y/n)')
-            if input == 'y':
-                #remove Decks/{self.name}
-                os.removedirs(f"Decks/{self.name}")
-                os.makedirs(f"Decks/{self.name}")
-            else:
-                self.load_deck()
 
 
     def add_card(self, card_name, num, save_card_image=True):
@@ -34,37 +22,46 @@ class MagicDeck:
         
         data = json.loads(response.content)
         
+        if data.get("printed_name") ==  None:
+            namesito = data.get("name")
+            descrip = data.get("oracle_text")
+        else:
+            namesito = data.get("printed_name")
+            descrip = data.get("printed_text")
+
         #load the desired data in a json
         card_data = {
-                "url": data['image_uris']['large'],
-                "name": data.get("printed_name"),
+                "url": data['image_uris']['small'],
+                "name": namesito,
                 "mana_cost": data.get("mana_cost"),
                 "cmc": data.get("cmc"),
                 "type_line": data.get("type_line"),
                 "power": data.get("power"),
                 "toughness": data.get("toughness"),
                 "keywords": data.get("keywords"),
-                "printed_text": data.get("printed_text"),
+                "printed_text": descrip,
                 "count": num
             }
         
         #check if the card data is allready on the self.cards:
         for card in self.cards:
             if card.get('name') == card_data.get('name'):
-                card['count'] += card_data.get('count')
-                return
+                card['count'] += num
+                self.save_deck()
+                return True
+                
     
         self.cards.append(card_data)
 
         #save the image:
         if save_card_image == True:
-            large_image_url = data['image_uris']['large']
+            image_url = data['image_uris']['small']
 
             # Download the image and save it to a file
-            response = requests.get(large_image_url)
+            response = requests.get(image_url)
             if response.status_code != 200:
                 print(f"Error: Failed to download image for card '{card_name}'")
-                return
+                return False
             
             image = Image.open(BytesIO(response.content))
             os.makedirs(self.card_images_PATH, exist_ok=True)
@@ -73,8 +70,8 @@ class MagicDeck:
             #print(f"Image saved as '{self.card_images_PATH}{card_name}.png'")
 
         self.save_deck()
-        print('{} added'.format(data.get("printed_name")))
-        print(self.cards)
+        
+        return True
 
     def remove_card(self, card_name):
         for card in self.cards:
@@ -99,7 +96,36 @@ class MagicDeck:
     def save_deck(self):
         with open(f"Decks/{self.name}/deck_cards.json", "w") as file:
             json.dump(self.cards, file, indent=4)
-            
+
+    def generate_mana_curve(self, style='dark_background', show_lands = True):
+        self.mana_curve = {}  
+        for card in self.cards:
+            mana_cost = int(card.get("cmc"))
+            type_line = card.get('type_line')
+            if 'Basic Land' in type_line and show_lands:
+                mana_cost = card.get('name')
+            if mana_cost not in self.mana_curve:
+                self.mana_curve[mana_cost] = 0
+            self.mana_curve[mana_cost] += card.get("count")
+        #ordenalo de menos a mas a menos mana cost
+        if show_lands: 
+            sorted_items = sorted(self.mana_curve.items(), key=lambda x: (isinstance(x[0], str), x[0]))
+            self.mana_curve = dict(sorted_items)
+        print(self.mana_curve) 
+        
+        fig, ax = plt.subplots()
+        plt.style.use(style)
+        # Create a bar plot of the mana curve
+        x = np.arange(len(self.mana_curve))
+        y = list(self.mana_curve.values())
+        ax.bar(x, y, align="center")
+        ax.set_xticks(x)
+        ax.set_xticklabels(list(self.mana_curve.keys()))
+        ax.set_xlabel("Mana Cost")
+        ax.set_ylabel("Number of Cards")
+        ax.set_title("Mana Curve")
+
+        return fig  
 
     def generate_image(self):
         # Get the card images
@@ -109,16 +135,14 @@ class MagicDeck:
                 repeated_cards = 1
             else:
                 repeated_cards = card.get('count')
+            image_url = card.get("url")
+            response = requests.get(image_url)
+            image = Image.open(BytesIO(response.content))
+            mana_cost = card.get("cmc")
             for i in range(repeated_cards):
-                image_url = card.get("url")
-                if image_url:
-                    response = requests.get(image_url)
-                    if response.status_code == 200:
-                        image = Image.open(BytesIO(response.content))
-                        mana_cost = card.get("cmc")
-                        if mana_cost not in card_images:
-                            card_images[mana_cost] = []
-                        card_images[mana_cost].append(image)
+                if mana_cost not in card_images:
+                    card_images[mana_cost] = []
+                card_images[mana_cost].append(image)
 
         # Combine the card images into a single image
         if card_images:
@@ -180,8 +204,8 @@ class MagicDeck:
 
         return combined_image
 
-
     def load_deck(self):
         #load a .json
         with open(f"Decks/{self.name}/deck_cards.json", "r") as file:
             self.cards = json.load(file)
+

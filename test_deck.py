@@ -1,7 +1,7 @@
 from MTGDeck import *
 
 # Create a new deck called "My Deck"
-deck = MagicDeck("Example_Deck")
+deck = MagicDeck("testing")
 
 # Add some cards to the deck
 deck.add_card("nim toxico", 2)
@@ -19,6 +19,8 @@ deck.add_card("sed de sorin", 1)
 deck.add_card("Swamp", 8)
 
 deck.remove_card('Nim tóxico')
+
+deck.generate_mana_curve(style='dark_background', show_lands = False)
 
 deck.save_deck()
 

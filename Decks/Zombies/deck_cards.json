@@ -1,0 +1,160 @@
+[
+    {
+        "url": "https://cards.scryfall.io/small/front/0/1/018bd4ae-cdea-410d-9ce6-6a70f12de966.jpg?1562895388",
+        "name": "Sightless Ghoul",
+        "mana_cost": "{3}{B}",
+        "cmc": 4.0,
+        "type_line": "Creature \u2014 Zombie Soldier",
+        "power": "2",
+        "toughness": "2",
+        "keywords": [
+            "Undying"
+        ],
+        "printed_text": "Sightless Ghoul can't block.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/c/9/c90a12af-b453-4d83-9a14-5411b562d480.jpg?1600699446",
+        "name": "Black Cat",
+        "mana_cost": "{1}{B}",
+        "cmc": 2.0,
+        "type_line": "Creature \u2014 Zombie Cat",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "When Black Cat dies, target opponent discards a card at random.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/f/b/fbe999ed-b419-440c-9189-1046f43d7b87.jpg?1562954699",
+        "name": "Highborn Ghoul",
+        "mana_cost": "{B}{B}",
+        "cmc": 2.0,
+        "type_line": "Creature \u2014 Zombie",
+        "power": "2",
+        "toughness": "1",
+        "keywords": [
+            "Intimidate"
+        ],
+        "printed_text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/4/3/43297ddd-276f-4d2d-9d9c-937603d0e376.jpg?1592763119",
+        "name": "Abattoir Ghoul",
+        "mana_cost": "{3}{B}",
+        "cmc": 4.0,
+        "type_line": "Creature \u2014 Zombie",
+        "power": "3",
+        "toughness": "2",
+        "keywords": [
+            "First strike"
+        ],
+        "printed_text": "First strike\nWhenever a creature dealt damage by Abattoir Ghoul this turn dies, you gain life equal to that creature's toughness.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/c/3/c3140bf5-9846-47ae-8142-b013aac14609.jpg?1580014388",
+        "name": "Tragic Slip",
+        "mana_cost": "{B}",
+        "cmc": 1.0,
+        "type_line": "Instant",
+        "power": null,
+        "toughness": null,
+        "keywords": [
+            "Morbid"
+        ],
+        "printed_text": "Target creature gets -1/-1 until end of turn.\nMorbid \u2014 That creature gets -13/-13 until end of turn instead if a creature died this turn.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/c/0/c0dacbb2-21e1-4220-bf43-75a0729cdc60.jpg?1592518350",
+        "name": "Sorin's Thirst",
+        "mana_cost": "{B}{B}",
+        "cmc": 2.0,
+        "type_line": "Instant",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "Sorin's Thirst deals 2 damage to target creature and you gain 2 life.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/8/8/888cdb76-d365-41df-8b6a-378ac58ca8b2.jpg?1680827553",
+        "name": "Swamp",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Basic Land \u2014 Swamp",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "({T}: Add {B}.)",
+        "count": 8
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/5/8/5823990c-8d40-4352-8d34-74332934adb2.jpg?1562877774",
+        "name": "Toxic Nim",
+        "mana_cost": "{4}{B}{B}",
+        "cmc": 6.0,
+        "type_line": "Creature \u2014 Phyrexian Zombie",
+        "power": "4",
+        "toughness": "1",
+        "keywords": [
+            "Infect"
+        ],
+        "printed_text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\n{B}: Regenerate Toxic Nim.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/a/3/a300a645-aec6-4cda-8c11-1e8a6af056ff.jpg?1562880361",
+        "name": "Reaper of Sheoldred",
+        "mana_cost": "{4}{B}",
+        "cmc": 5.0,
+        "type_line": "Creature \u2014 Phyrexian Horror",
+        "power": "2",
+        "toughness": "5",
+        "keywords": [
+            "Infect"
+        ],
+        "printed_text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever a source deals damage to Reaper of Sheoldred, that source's controller gets a poison counter.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/4/d/4defdead-19fa-4535-9f71-8808388b0332.jpg?1562913252",
+        "name": "Reap the Seagraf",
+        "mana_cost": "{2}{B}",
+        "cmc": 3.0,
+        "type_line": "Sorcery",
+        "power": null,
+        "toughness": null,
+        "keywords": [
+            "Flashback"
+        ],
+        "printed_text": "Create a 2/2 black Zombie creature token.\nFlashback {4}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/8/5/850ccdcb-2cd7-4f27-aa9b-917a62a5e94d.jpg?1600826696",
+        "name": "Ghoulraiser",
+        "mana_cost": "{1}{B}{B}",
+        "cmc": 3.0,
+        "type_line": "Creature \u2014 Zombie",
+        "power": "2",
+        "toughness": "2",
+        "keywords": [],
+        "printed_text": "When Ghoulraiser enters the battlefield, return a Zombie card at random from your graveyard to your hand.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/b/5/b5bf549c-799f-456f-85d5-8a7302bc729d.jpg?1562791933",
+        "name": "Gravepurge",
+        "mana_cost": "{2}{B}",
+        "cmc": 3.0,
+        "type_line": "Instant",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "Put any number of target creature cards from your graveyard on top of your library.\nDraw a card.",
+        "count": 1
+    }
+]
