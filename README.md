@@ -15,7 +15,7 @@ Follow these steps:
 
 The program has a simple and easy to use interface:
 
-![](https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/GUI.PNG =400x300)
+![GUI](https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/GUI.PNG)
 
 
 
