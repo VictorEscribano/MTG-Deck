@@ -14,6 +14,7 @@ Follow these steps:
   - If you have Decks already created you can load those decks and work with it
 
 The program has a simple and easy to use interface:
+
 ![](https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/GUI.PNG =400x300)
 
 
