@@ -11,7 +11,7 @@
             "Infect"
         ],
         "printed_text": "Infectar. (Esta criatura hace da\u00f1o a las criaturas en forma de contadores -1/-1 y a los jugadores en forma de contadores de veneno.)\n{B}: Regenera al Nim t\u00f3xico.",
-        "count": 1
+        "count": 9
     },
     {
         "url": "https://cards.scryfall.io/small/front/9/7/9712623e-6f2e-4196-81ad-e8d896a0ab8a.jpg?1562879957",
@@ -155,6 +155,6 @@
         "toughness": null,
         "keywords": [],
         "printed_text": "({T}: Add {B}.)",
-        "count": 8
+        "count": 12
     }
 ]

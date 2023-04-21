@@ -102,10 +102,13 @@ class MTGDeckGUI:
             paginated=True,
             pagesize=30,
             searchable=True,
-            bootstyle=PRIMARY
+            bootstyle=PRIMARY,
+            autofit=True
         )
-        self.deck_table.place(x=10, y=150, width=self.width*0.40, height=self.height*0.76 )
+        self.deck_table.place(x=10, y=150, width=self.width*0.40, height=self.height*0.95 )
 
+        event = self.deck_table._rowindex.get()
+        print(event)
         
         # Bind the <Configure> event of self.root to a function that sets the height of self.deck_table
         self.root.bind("<Configure>", self.on_window_resize)
@@ -121,7 +124,7 @@ class MTGDeckGUI:
         self.deck_table.place(x=10, y=150, width=self.width*0.40, height=self.height*0.76 )
         #si el deck no esta vacio
         if self.deck:
-            self.canvas_plot.get_tk_widget().place(x=self.width*0.45, y=150, width=self.width*0.50, height=self.height*0.76)
+            self.canvas_plot.get_tk_widget().place(x=self.width*0.45, y=150, width=self.width*0.50, height=self.height*0.45)
 
 
     def create_directory(self):
@@ -172,7 +175,14 @@ class MTGDeckGUI:
         self.update_values()
 
     def remove_card(self):
-        pass
+        name_of_card = self.card_name_entry.get()
+        repeated_cards = int(self.card_number_var.get())
+        if repeated_cards < 1:
+            Messagebox.show_error('Please select more than one card.')
+        else:
+            self.deck.remove_card(name_of_card, repeated_cards)
+
+        self.update_values()
 
     def save_deck(self):
         pass
@@ -188,21 +198,23 @@ class MTGDeckGUI:
                 self.deck_table.insert_row('end', [card.get("count"), card.get("type_line") , str(card.get("power")), str(card.get("toughness")), str(card.get("printed_text"))])
         self.deck_table.reset_table()
         self.show_mana_curve()
-        
         #self.show_deck_image()
 
     def show_mana_curve(self):
         #remove previous canvas
+        if self.canvas_plot:
+            self.canvas_plot.get_tk_widget().destroy()
+
         # generate the plot
         self.mana_plot = self.deck.generate_mana_curve(style='bmh', show_lands=True)
         # set the figure properties
-        self.mana_plot.set_size_inches(8, 6)
+        self.mana_plot.set_size_inches(3, 5)
         self.mana_plot.tight_layout()
-
+        
         # show plot on tk window
         self.canvas_plot = FigureCanvasTkAgg(self.mana_plot, master=self.root)
         self.canvas_plot.draw()
-        self.canvas_plot.get_tk_widget().place(x=self.width*0.45, y=150, width=640, height=547)
+        self.canvas_plot.get_tk_widget().place(x=self.width*0.45, y=150, width=self.width*0.50, height=self.height*0.45)
         self.update_sizes()
         
         

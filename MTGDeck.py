@@ -12,15 +12,18 @@ class MagicDeck:
         self.cards = []
         self.card_images_PATH = f"Decks/{self.name}/card_images/"
 
-
-    def add_card(self, card_name, num, save_card_image=True):
-        
+    def get_api_data(self, card_name):
         response = requests.get(f"https://api.scryfall.com/cards/named?fuzzy={card_name}")
         if response.status_code != 200:
             print(f"Error: Card '{card_name}' not found")
             return
         
         data = json.loads(response.content)
+        return data
+    
+    def add_card(self, card_name, num, save_card_image=True):
+                
+        data = self.get_api_data(card_name)
         
         if data.get("printed_name") ==  None:
             namesito = data.get("name")
@@ -73,12 +76,19 @@ class MagicDeck:
         
         return True
 
-    def remove_card(self, card_name):
+    def remove_card(self, card_name ,num):
+        data = self.get_api_data(card_name)
+        
+        if data.get("printed_name") ==  None:
+            card_name = data.get("name")
+        else:
+            card_name = data.get("printed_name")
+
         for card in self.cards:
-            if card.get("name") == card_name:
+            if card.get("name") == card_name or card_name in card.get("type_line"):
                 print('Removing {}...'.format(card.get("name")))
                 if card.get("count") > 1:
-                    card["count"] -= 1
+                    card["count"] -= num
                 else:
                     self.cards.remove(card)
                 return
@@ -91,7 +101,12 @@ class MagicDeck:
                 return card.get("count")
             else:
                 return 0
-        
+
+    def how_many_cards(self):
+        total = 0
+        for card in self.cards:
+            total += card.get("count")
+        return total
 
     def save_deck(self):
         with open(f"Decks/{self.name}/deck_cards.json", "w") as file:
