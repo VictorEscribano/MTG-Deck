@@ -1,6 +1,6 @@
 # MTG-Deck
 This repository contains a tool for managing and analyzing Magic: The Gathering (MTG) decks. 
-With this code, you can load a list of cards from a file and generate a graphical representation of the deck's mana curve, showing the distribution of mana costs across the cards. Additionally, a JSON file is generated with all the card information, including name, mana cost, type, and text.
+With this code, you can create, load and modify Magic The Gathering Decks and generate a graphical representation of the deck's mana curve in order to analyze the balance of your deck. Additionally, a JSON file is generated with all the card information, including name, mana cost, type, text, url, price, etc.
 
 ## Usage
 
@@ -8,7 +8,15 @@ Follow these steps:
 
 1. Clone this repository to your local machine.
 2. Install the required dependencies by running `pip install -r requirements.txt`.
-3. Fill the test_deck.py with the names of your cards (avoid symbols). You can use this code as an example of usage of the class functions.
+3. Open the GUI. The main functionalities are:
+  - Ceate deck with custom name
+  - Add/Remove cards to the created Deck (The deck is saved automatically)
+  - If you have Decks already created you can load those decks and work with it
+
+The program has a simple and easy to use interface:
+<img src="https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/{your deck name}/mana_curve.png" width="500" height="400">
+![Mana curve](img)
+
 
 ## Results
 
