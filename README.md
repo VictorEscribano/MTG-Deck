@@ -14,7 +14,7 @@ Follow these steps:
   - If you have Decks already created you can load those decks and work with it
 
 The program has a simple and easy to use interface:
-<img src="https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/{your deck name}/mana_curve.png" width="500" height="400">
+<img src="https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/GUI.PNG" width="500" height="400">
 
 
 
