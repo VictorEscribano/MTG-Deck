@@ -18,22 +18,13 @@ The program has a simple and easy to use interface:
 ![GUI](https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/GUI.PNG)
 
 
+## Outputs
 
+This will also output 1 .json file containing all the necessary information with respct the deck cards.
+It also outputs a more grafic representation of the mana curve, with the cards displayed horizkontal and vertically with respect its mana cost.
+Here we can see a Jumpstart Zombie deck and apreciate the balance of mana cost:
 
-## Results
-
-This will output 2 .json files, one for the cards related to creatures, artifacts, spells, etc. and other json for the lands.
-Also a .png of the card balance will be created.
-Here we can see a Jumpstart Golem deck and apreciate the balance of mana cost:
-
-![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Jumpstart%20de%20Golems/deck.png)
-
-The same with this Toxic/Zombie jumpstart Deck:
 ![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Toxico%20Zombie/deck.png)
-
-On the other hand this Triton jumpstart Deck is not balanced as it has too few low mana cost cards and too many mid cost ones:
-![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Tritones/deck.png)
-
 
 
 
@@ -41,7 +32,10 @@ On the other hand this Triton jumpstart Deck is not balanced as it has too few l
 
 This tool is still in development, and there are several possible improvements and extensions that could be added in the future. Some ideas include:
 
+- Adding the image mana cost to the GUI
+- Add synergy graph based on the 17Lands API using the GIH (Game in Hand) metric
+- Apply dimensionality reduction techniques to see the less relevant cards of the deck.
 - Adding support for different output formats (e.g. CSV, Excel, LaTeX).
 - Implementing more sophisticated analysis of the deck's mana curve (e.g. calculating the average mana cost, detecting color imbalances).
-- Integrating with online MTG databases to automatically fetch card information and prices.
+- Add price curve
 - Adding support for other deck formats (e.g. Commander, Limited).
