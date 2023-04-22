@@ -26,8 +26,10 @@ class MagicDeck:
         data = self.get_api_data(card_name)
         
         try:
+            english_name = data.get("name")
+            english_data = self.get_api_data(english_name)
             if data.get("printed_name") ==  None:
-                namesito = data.get("name")
+                namesito = english_name
                 descrip = data.get("oracle_text")
             else:
                 namesito = data.get("printed_name")
@@ -38,7 +40,7 @@ class MagicDeck:
 
         #load the desired data in a json
         card_data = {
-                "url": data['image_uris']['small'],
+                "url": data['image_uris']['normal'],
                 "name": namesito,
                 "mana_cost": data.get("mana_cost"),
                 "cmc": data.get("cmc"),
@@ -47,7 +49,9 @@ class MagicDeck:
                 "toughness": data.get("toughness"),
                 "keywords": data.get("keywords"),
                 "printed_text": descrip,
-                "count": num
+                "count": num,
+                'price_eur': english_data['prices']['eur'],
+                'price_usd': english_data['prices']['usd']
             }
         
         #check if the card data is allready on the self.cards:
@@ -62,13 +66,30 @@ class MagicDeck:
 
         #save the image:
         if save_card_image == True:
-            image_url = card_data.get('url')
-            self.save_image(namesito, image_url)
+            self.save_image(card_data.get('name'), card_data.get('url'))
 
         self.save_deck()
         
         return True
     
+    def price(self, coin='eur'):
+        total = 0
+        for card in self.cards:
+            try:
+                price = float(card[f'price_{coin}'])
+            except:
+                price = 0
+            if price:
+                total += float(card['count']) * price
+
+        return round(total, 2)
+    
+    def size(self):
+        total = 0
+        for card in self.cards:
+            total += int(card['count'])
+        print(total)
+        return total
 
     def save_image(self, card_name, image_url):
         

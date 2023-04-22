@@ -24,18 +24,6 @@
         "count": 8
     },
     {
-        "url": "https://cards.scryfall.io/small/front/1/a/1a47f072-5396-44d3-b276-1090d34e119e.jpg?1681967768",
-        "name": "\u00darabrask el Oculto",
-        "mana_cost": "{3}{R}{R}",
-        "cmc": 5.0,
-        "type_line": "Legendary Creature \u2014 Phyrexian Praetor",
-        "power": "4",
-        "toughness": "4",
-        "keywords": [],
-        "printed_text": "Las criaturas que controlas tienen la habilidad de prisa.\nLas criaturas que controlan tus oponentes entran al campo de batalla giradas.",
-        "count": 1
-    },
-    {
         "url": "https://cards.scryfall.io/small/front/a/a/aa6861ce-3846-4c59-9240-00aa2cb90ebc.jpg?1562835256",
         "name": "Lanzador de furia",
         "mana_cost": "{5}{R}",
@@ -59,18 +47,6 @@
             "Enchant"
         ],
         "printed_text": "Encantar artefacto.\nCuando el artefacto encantado vaya a un cementerio, gana 6 vidas.",
-        "count": 1
-    },
-    {
-        "url": "https://cards.scryfall.io/small/front/a/3/a355e8e0-a0ef-47ad-bcee-b91e28d0d42b.jpg?1645556500",
-        "name": "Repercusi\u00f3n volc\u00e1nica",
-        "mana_cost": "{1}{R}{R}",
-        "cmc": 3.0,
-        "type_line": "Instant",
-        "power": null,
-        "toughness": null,
-        "keywords": [],
-        "printed_text": "Este hechizo no puede ser contrarrestado.\nLa Repercusi\u00f3n volc\u00e1nica hace 2 puntos de da\u00f1o a cada criatura y a cada jugador.",
         "count": 1
     },
     {
@@ -138,32 +114,6 @@
         "count": 1
     },
     {
-        "url": "https://cards.scryfall.io/small/front/e/c/ec0a52c9-7e5b-48cd-a5f0-352f5f27b8d4.jpg?1645507051",
-        "name": "Desollador de los Odioligados",
-        "mana_cost": "{5}{R}",
-        "cmc": 6.0,
-        "type_line": "Creature \u2014 Devil",
-        "power": "4",
-        "toughness": "2",
-        "keywords": [
-            "Undying"
-        ],
-        "printed_text": "Resiliencia. (Cuando esta criatura muera, si no ten\u00eda contadores +1/+1 sobre ella, regr\u00e9sala al campo de batalla bajo el control de su propietario con un contador +1/+1.)\nSiempre que el Desollador de los Odioligados u otra criatura entre al campo de batalla desde tu cementerio, esa criatura hace una cantidad de da\u00f1o igual a su fuerza a cualquier objetivo.",
-        "count": 1
-    },
-    {
-        "url": "https://cards.scryfall.io/small/front/1/2/125a83cb-e8da-4a46-a18e-2bf375ddce0c.jpg?1677109530",
-        "name": "Crecimiento tit\u00e1nico",
-        "mana_cost": "{1}{G}",
-        "cmc": 2.0,
-        "type_line": "Instant",
-        "power": null,
-        "toughness": null,
-        "keywords": [],
-        "printed_text": "La criatura objetivo obtiene +4/+4 hasta el final del turno.",
-        "count": 1
-    },
-    {
         "url": "https://cards.scryfall.io/small/front/a/1/a16e7b09-7782-495f-a416-32e2689f59d1.jpg?1677129088",
         "name": "Sobrepasar",
         "mana_cost": "{2}{G}{G}{G}",
@@ -200,32 +150,6 @@
         "toughness": null,
         "keywords": [],
         "printed_text": "Ganas 1 vida por cada tierra que controles.",
-        "count": 1
-    },
-    {
-        "url": "https://cards.scryfall.io/small/front/0/a/0ae36ce2-98de-4ff2-b8f6-ff858d3fee7f.jpg?1562876762",
-        "name": "Grandulones de Boldwyr",
-        "mana_cost": "{2}{R}{R}",
-        "cmc": 4.0,
-        "type_line": "Creature \u2014 Giant Warrior",
-        "power": "8",
-        "toughness": "8",
-        "keywords": [
-            "Trample"
-        ],
-        "printed_text": "Arrolla.\nCuando los Grandulones de Boldwyr entren en juego, cada oponente puede buscar en su biblioteca una carta de criatura y ponerla en juego. Luego cada jugador que busc\u00f3 en su biblioteca de esta manera la baraja.",
-        "count": 1
-    },
-    {
-        "url": "https://cards.scryfall.io/small/front/d/5/d51b9df8-144c-43de-8156-a9f5de249e8f.jpg?1562710132",
-        "name": "Acto de agresi\u00f3n",
-        "mana_cost": "{3}{R/P}{R/P}",
-        "cmc": 5.0,
-        "type_line": "Instant",
-        "power": null,
-        "toughness": null,
-        "keywords": [],
-        "printed_text": "({R/P} puede pagarse con {R} o con 2 vidas.)Gana el control de la criatura objetivo que controla un oponente hasta el final del turno. Endereza esa criatura. Gana la habilidad de prisa hasta el final del turno.",
         "count": 1
     },
     {
@@ -347,18 +271,6 @@
         "count": 1
     },
     {
-        "url": "https://cards.scryfall.io/small/front/5/e/5e3a04e2-cf3b-4a2d-a49a-d3d75b618e4e.jpg?1645853739",
-        "name": "Acto de traici\u00f3n",
-        "mana_cost": "{2}{R}",
-        "cmc": 3.0,
-        "type_line": "Sorcery",
-        "power": null,
-        "toughness": null,
-        "keywords": [],
-        "printed_text": "Gana el control de la criatura objetivo hasta el final del turno. Endereza esa criatura. Gana la habilidad de prisa hasta el final del turno. (Puede atacar y {T} este turno.)",
-        "count": 1
-    },
-    {
         "url": "https://cards.scryfall.io/small/front/0/c/0c7ef8ef-df47-4478-b6b2-a0bfd8bb18f3.jpg?1562897875",
         "name": "Sierpe labratumba",
         "mana_cost": "{5}{G}",
@@ -371,6 +283,94 @@
             "Morbid"
         ],
         "printed_text": "Arrolla.\nNecrario \u2014 La Sierpe labratumba entra al campo de batalla con cuatro contadores +1/+1 sobre ella si una criatura muri\u00f3 este turno.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/1/a/1a47f072-5396-44d3-b276-1090d34e119e.jpg?1681967768",
+        "name": "\u00darabrask el Oculto",
+        "mana_cost": "{3}{R}{R}",
+        "cmc": 5.0,
+        "type_line": "Legendary Creature \u2014 Phyrexian Praetor",
+        "power": "4",
+        "toughness": "4",
+        "keywords": [],
+        "printed_text": "Las criaturas que controlas tienen la habilidad de prisa.\nLas criaturas que controlan tus oponentes entran al campo de batalla giradas.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/a/3/a355e8e0-a0ef-47ad-bcee-b91e28d0d42b.jpg?1645556500",
+        "name": "Repercusi\u00f3n volc\u00e1nica",
+        "mana_cost": "{1}{R}{R}",
+        "cmc": 3.0,
+        "type_line": "Instant",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "Este hechizo no puede ser contrarrestado.\nLa Repercusi\u00f3n volc\u00e1nica hace 2 puntos de da\u00f1o a cada criatura y a cada jugador.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/e/c/ec0a52c9-7e5b-48cd-a5f0-352f5f27b8d4.jpg?1645507051",
+        "name": "Desollador de los Odioligados",
+        "mana_cost": "{5}{R}",
+        "cmc": 6.0,
+        "type_line": "Creature \u2014 Devil",
+        "power": "4",
+        "toughness": "2",
+        "keywords": [
+            "Undying"
+        ],
+        "printed_text": "Resiliencia. (Cuando esta criatura muera, si no ten\u00eda contadores +1/+1 sobre ella, regr\u00e9sala al campo de batalla bajo el control de su propietario con un contador +1/+1.)\nSiempre que el Desollador de los Odioligados u otra criatura entre al campo de batalla desde tu cementerio, esa criatura hace una cantidad de da\u00f1o igual a su fuerza a cualquier objetivo.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/1/2/125a83cb-e8da-4a46-a18e-2bf375ddce0c.jpg?1677109530",
+        "name": "Crecimiento tit\u00e1nico",
+        "mana_cost": "{1}{G}",
+        "cmc": 2.0,
+        "type_line": "Instant",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "La criatura objetivo obtiene +4/+4 hasta el final del turno.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/0/a/0ae36ce2-98de-4ff2-b8f6-ff858d3fee7f.jpg?1562876762",
+        "name": "Grandulones de Boldwyr",
+        "mana_cost": "{2}{R}{R}",
+        "cmc": 4.0,
+        "type_line": "Creature \u2014 Giant Warrior",
+        "power": "8",
+        "toughness": "8",
+        "keywords": [
+            "Trample"
+        ],
+        "printed_text": "Arrolla.\nCuando los Grandulones de Boldwyr entren en juego, cada oponente puede buscar en su biblioteca una carta de criatura y ponerla en juego. Luego cada jugador que busc\u00f3 en su biblioteca de esta manera la baraja.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/d/5/d51b9df8-144c-43de-8156-a9f5de249e8f.jpg?1562710132",
+        "name": "Acto de agresi\u00f3n",
+        "mana_cost": "{3}{R/P}{R/P}",
+        "cmc": 5.0,
+        "type_line": "Instant",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "({R/P} puede pagarse con {R} o con 2 vidas.)Gana el control de la criatura objetivo que controla un oponente hasta el final del turno. Endereza esa criatura. Gana la habilidad de prisa hasta el final del turno.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/5/e/5e3a04e2-cf3b-4a2d-a49a-d3d75b618e4e.jpg?1645853739",
+        "name": "Acto de traici\u00f3n",
+        "mana_cost": "{2}{R}",
+        "cmc": 3.0,
+        "type_line": "Sorcery",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "Gana el control de la criatura objetivo hasta el final del turno. Endereza esa criatura. Gana la habilidad de prisa hasta el final del turno. (Puede atacar y {T} este turno.)",
         "count": 1
     },
     {

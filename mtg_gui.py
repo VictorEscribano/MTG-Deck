@@ -26,6 +26,9 @@ class MTGDeckGUI:
         self.current_deck_name = ''
         self.canvas_plot = None
         self.deck_image_label = None
+        self.label_selector = 0 #0 for the deck image
+                                #1 for the mana curve plot
+                                #2 for the synergy plot
 
         ################################################################## LABEL FRAMES: ##############################################################################################################
         # create a label frame to hold images, plots, etc.
@@ -35,21 +38,24 @@ class MTGDeckGUI:
             width=int(self.width*0.50), 
             height=int(self.height*0.75)
         )
-        self.label_frame.place(x=int(self.width*0.50), y=150, width=int(self.width*0.49), height=int(self.height*0.75))
-
-        #frame tho select plots, images, synergies, etc.
-        self.frame_2 = tk.LabelFrame(
-            self.root, 
-            text="Select Display"
-        )
-        self.frame_2.place(x=int(self.width*0.50), y=10, width=int(self.width*0.49), height=110)
 
         #frame tho select plots, images, synergies, etc.
         self.frame1 = tk.LabelFrame(
             self.root, 
             text="Deck Lab"
         )
-        self.frame1.place(x=10, y=10, width=int(self.width*0.45), height=110)
+
+        #frame tho select plots, images, synergies, etc.
+        self.frame2 = tk.LabelFrame(
+            self.root, 
+            text="Select Display"
+        )
+
+        #frame tho select plots, images, synergies, etc.
+        self.frame3 = tk.LabelFrame(
+            self.root, 
+            text="Deck Info"
+        )
 
         ################################################################## CREATE / IMPORT DECK (MASTER=self.frame1) ########################################################################################
         #Create Deck button
@@ -117,6 +123,7 @@ class MTGDeckGUI:
         #Deck table initialization:
         coldata = [
             {"text": "Nº", "stretch": True, 'width':int(self.width*0.02)},
+            {"text": "Price($)", "stretch": True, 'width':int(self.width*0.02)},
             {"text": "Name", "stretch": True, 'width':int(self.width*0.11)},
             {"text": "Atack", "stretch": True, 'width':int(self.width*0.04)},
             {"text": "Defense", "stretch": True, 'width':int(self.width*0.05)},
@@ -130,18 +137,16 @@ class MTGDeckGUI:
             coldata=coldata,
             rowdata=rowdata,
             paginated=True,
-            pagesize=30,
+            pagesize=100,
             searchable=True,
-            bootstyle=PRIMARY,
-            autofit=True
+            bootstyle=PRIMARY
         )
-        self.deck_table.place(x=10, y=150, width=int(self.width*0.45), height=self.height*0.95 )
 
 
-        ################################################################## DECK IMAGE, PLOTS, SYNERGIES (MASTER=self.frame_2) ############################################
+        ################################################################## DECK IMAGE, PLOTS, SYNERGIES (MASTER=self.frame2) ############################################
         #add image deck button
         self.add_image_button = tk.Button(
-            self.frame_2, 
+            self.frame2, 
             bootstyle="outline",
             width=15, 
             text="Show deck image", 
@@ -151,7 +156,7 @@ class MTGDeckGUI:
 
         #add plot deck button
         self.add_plot_button = tk.Button(
-            self.frame_2, 
+            self.frame2, 
             bootstyle="outline",
             width=15, 
             text="Show mana plot", 
@@ -161,14 +166,32 @@ class MTGDeckGUI:
 
         #add plot synergy button
         self.add_syn_button = tk.Button(
-            self.frame_2, 
+            self.frame2, 
             bootstyle="outline",
             width=15, 
             text="Show synergies"
             #command=self.show_mana_curve
         )
         self.add_syn_button.place(relx=0.85, rely=0.5, anchor="center")
-        
+
+
+        ################################################################## DECK IFNO (MASTER=self.frame3) ########################################################################################
+        #add deck size label
+        self.deck_size_label = tk.Label(
+            self.frame3, 
+            text="Deck size: 0"
+        )
+        self.deck_size_label.place(relx=0.10, rely=0.5, anchor="center")
+
+        #price
+        self.deck_price_label = tk.Label(
+            self.frame3, 
+            text="Deck price: 0"
+        )
+        self.deck_price_label.place(relx=0.50, rely=0.5, anchor="center")
+
+
+
 
         # Bind the <Configure> event of self.root to a function that sets the height of self.deck_table
         self.root.bind("<Configure>", self.on_window_resize)
@@ -184,12 +207,13 @@ class MTGDeckGUI:
 
     def update_sizes(self):
         #Update lable frames:
-        self.label_frame.place(x=int(self.width*0.50), y=150, width=int(self.width*0.49), height=int(self.height*0.75))
-        self.frame_2.place(x=int(self.width*0.50), y=10, width=int(self.width*0.49), height=110)
+        self.label_frame.place(x=int(self.width*0.50), y=150, width=int(self.width*0.49), height=(self.height*0.78))
+        self.frame2.place(x=int(self.width*0.50), y=10, width=int(self.width*0.49), height=110)
         self.frame1.place(x=10, y=10, width=int(self.width*0.45), height=110)
-
+        self.frame3.place(x=10, rely=0.82, width=int(self.width*0.45), height=110)
+        
         #update component sizes
-        self.deck_table.place(x=10, y=150, width=(self.width*0.45), height=self.height*0.76 )
+        self.deck_table.place(x=10, y=150, width=(self.width*0.45), relheight=0.62)
         #self.add_image_button.place(x=self.width*0.65, y=self.height*0.0277)
 
         #Update plot size        
@@ -236,9 +260,8 @@ class MTGDeckGUI:
         else:
             if not self.deck.add_card(name_of_card, repeated_cards):
                 Messagebox.show_error('Card not found.')
-                self.card_name_entry.delete(0, 'end')
             else:
-                self.card_name_entry.delete(0, 'end')
+                print(f'{name_of_card} added.')
 
         # print('Se han añadido {} {}'.format(repeated_cards, name_of_card))
         # print(self.deck.cards[0])
@@ -257,26 +280,31 @@ class MTGDeckGUI:
 
         self.update_values()
 
-    def save_deck(self):
-        pass
 
     def update_values(self):
         self.deck_table.delete_rows()
         for card in self.deck.cards:
             #si card.get("name") es una tierra el nombre será el card.get("type_line")
             if card.get("name") is not None: 
-                self.deck_table.insert_row('end', [card.get("count"), card.get("name") , str(card.get("power")), str(card.get("toughness")), str(card.get("printed_text"))])
+                self.deck_table.insert_row('end', [card.get("count"), card.get("price_usd"), card.get("name") , str(card.get("power")), str(card.get("toughness")), str(card.get("printed_text"))])
             else:
                 print('No se detecta el nombre de {}'.format(card.get("name")))
-                self.deck_table.insert_row('end', [card.get("count"), card.get("type_line") , str(card.get("power")), str(card.get("toughness")), str(card.get("printed_text"))])
+                self.deck_table.insert_row('end', [card.get("count"), card.get("price_usd"), card.get("type_line") , str(card.get("power")), str(card.get("toughness")), str(card.get("printed_text"))])
             if card.get('count') <= 0:
                 self.deck.cards.remove(card)
                 
         self.deck_table.reset_table()
-        self.show_mana_curve()
-        #self.show_deck_image()
+        if self.deck:
+            self.show_prize()
+            self.show_size()
+        if self.label_selector == 0:
+            self.show_deck_image()
+        elif self.label_selector == 1:
+            self.show_mana_curve()
+        
 
     def show_mana_curve(self):
+        self.label_selector = 1
         #remove previous canvas
         if self.canvas_plot:
             self.canvas_plot.get_tk_widget().destroy()
@@ -296,9 +324,13 @@ class MTGDeckGUI:
         self.canvas_plot.draw()
         self.canvas_plot.get_tk_widget().place(x=0, y=0, width=self.label_frame.winfo_width(), height=self.label_frame.winfo_height())
 
+    def show_syn_plot(self):
+        self.label_selector = 1
+        pass
 
                        
     def show_deck_image(self):
+        self.label_selector = 0
         if self.deck_image_label:
             self.deck_image_label.destroy()
 
@@ -325,7 +357,13 @@ class MTGDeckGUI:
         # place the label widget at the bottom of the plot
         self.deck_image_label.place(x=0, y=0, width=self.deck_image.width, height=self.deck_image.height)
 
+    def show_prize(self):
+        price = self.deck.price('usd')
+        self.deck_price_label.config(text=f'Deck price: {round(price, 2)}$')
 
+    def show_size(self):
+        size = self.deck.size()
+        self.deck_size_label.config(text=f'Deck size: {size}')
 
 
     def empty_frame(self, frame_name):
@@ -337,6 +375,6 @@ class MTGDeckGUI:
         
 
 if __name__ == "__main__":
-    root = tk.Window(themename="superhero", alpha=0.98, resizable=[640, 480], iconphoto='icons/red.png', title='MTG Deck Builder')
+    root = tk.Window(themename="superhero", alpha=0.98, resizable=[640, 480], iconphoto='icons/magic.png', title='MTG Deck Builder')
     mtg_deck_gui = MTGDeckGUI(root)
     root.mainloop()
