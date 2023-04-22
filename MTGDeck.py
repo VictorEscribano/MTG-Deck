@@ -25,12 +25,16 @@ class MagicDeck:
                 
         data = self.get_api_data(card_name)
         
-        if data.get("printed_name") ==  None:
-            namesito = data.get("name")
-            descrip = data.get("oracle_text")
-        else:
-            namesito = data.get("printed_name")
-            descrip = data.get("printed_text")
+        try:
+            if data.get("printed_name") ==  None:
+                namesito = data.get("name")
+                descrip = data.get("oracle_text")
+            else:
+                namesito = data.get("printed_name")
+                descrip = data.get("printed_text")
+        except:
+            print("Error: Card not found")
+            return False
 
         #load the desired data in a json
         card_data = {
@@ -58,40 +62,51 @@ class MagicDeck:
 
         #save the image:
         if save_card_image == True:
-            image_url = data['image_uris']['small']
-
-            # Download the image and save it to a file
-            response = requests.get(image_url)
-            if response.status_code != 200:
-                print(f"Error: Failed to download image for card '{card_name}'")
-                return False
-            
-            image = Image.open(BytesIO(response.content))
-            os.makedirs(self.card_images_PATH, exist_ok=True)
-            
-            image.save(f"{self.card_images_PATH}{card_name}.png")
-            #print(f"Image saved as '{self.card_images_PATH}{card_name}.png'")
+            image_url = card_data.get('url')
+            self.save_image(namesito, image_url)
 
         self.save_deck()
         
         return True
+    
 
+    def save_image(self, card_name, image_url):
+        
+        # Download the image and save it to a file
+        response = requests.get(image_url)
+        if response.status_code != 200:
+            print(f"Error: Failed to download image for card '{card_name}'")
+            return False
+        
+        image = Image.open(BytesIO(response.content))
+        os.makedirs(self.card_images_PATH, exist_ok=True)
+        
+        image.save(f"{self.card_images_PATH}{card_name}.png")
+        #print(f"Image saved as '{self.card_images_PATH}{card_name}.png'")
+        pass
+
+    
     def remove_card(self, card_name ,num):
         data = self.get_api_data(card_name)
         
-        if data.get("printed_name") ==  None:
-            card_name = data.get("name")
-        else:
-            card_name = data.get("printed_name")
+        try:
+            if data.get("printed_name") ==  None:
+                card_name = data.get("name")
+            else:
+                card_name = data.get("printed_name")
+        except:
+            print("Error: Card not found")
+            return False
 
         for card in self.cards:
             if card.get("name") == card_name or card_name in card.get("type_line"):
                 print('Removing {}...'.format(card.get("name")))
-                if card.get("count") > 1:
-                    card["count"] -= num
-                else:
+                total_cards = card["count"] - num
+                card["count"] = total_cards
+                if total_cards <= 0:
                     self.cards.remove(card)
-                return
+                self.save_deck()
+                return True
 
     def count_cards(self, card_name):
         print(self.cards)
@@ -150,14 +165,16 @@ class MagicDeck:
                 repeated_cards = 1
             else:
                 repeated_cards = card.get('count')
-            image_url = card.get("url")
-            response = requests.get(image_url)
-            image = Image.open(BytesIO(response.content))
-            mana_cost = card.get("cmc")
-            for i in range(repeated_cards):
-                if mana_cost not in card_images:
-                    card_images[mana_cost] = []
-                card_images[mana_cost].append(image)
+            image_path = f"{self.card_images_PATH}{card.get('name')}.png"
+            if os.path.isfile(image_path):
+                image = Image.open(image_path)
+                mana_cost = card.get("cmc")
+                for i in range(repeated_cards):
+                    if mana_cost not in card_images:
+                        card_images[mana_cost] = []
+                    card_images[mana_cost].append(image)
+            else:
+                print(f"Error: Image file not found for card '{card.get('name')}'")
 
         # Combine the card images into a single image
         if card_images:
@@ -170,7 +187,7 @@ class MagicDeck:
             for mana_cost in sorted(card_images.keys()):
                 images = card_images[mana_cost]
                 if len(images) > 1:
-                    combined_images.append(self.combine_images(images, "vertical"))
+                    combined_images.append(self.combine_images(images, "vertical", overlap=0.5))
                 else:
                     combined_images.append(images[0])
 
@@ -184,7 +201,8 @@ class MagicDeck:
 
         return combined_image
 
-    def combine_images(self, images, orientation, width=None):
+
+    def combine_images(self, images, orientation, width=None, overlap=0):
         if not images:
             return None
 
@@ -207,18 +225,21 @@ class MagicDeck:
                 combined_image.paste(image, (x_offset, 0))
                 x_offset += image.size[0]
         elif orientation == "vertical":
-            total_height = sum(heights)
+            card_height = images[0].size[1]
+            total_height = sum(heights) - int((len(images) - 1) * card_height * overlap)
             max_width = max(widths)
             combined_image = Image.new("RGBA", (max_width, total_height))
             y_offset = 0
             for image in images:
                 combined_image.paste(image, (0, y_offset))
-                y_offset += image.size[1]
+                y_offset += image.size[1] - int(card_height * overlap)
         else:
             raise ValueError(f"Invalid orientation: {orientation}")
 
         return combined_image
 
+
+    
     def load_deck(self):
         #load a .json
         with open(f"Decks/{self.name}/deck_cards.json", "r") as file:

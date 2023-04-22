@@ -27,7 +27,7 @@ class MTGDeckGUI:
         self.canvas_plot = None
         self.deck_image_label = None
 
-        #LABEL FRAMES:
+        ################################################################## LABEL FRAMES: ##############################################################################################################
         # create a label frame to hold images, plots, etc.
         self.label_frame = tk.LabelFrame(
             self.root, 
@@ -51,7 +51,7 @@ class MTGDeckGUI:
         )
         self.frame1.place(x=10, y=10, width=int(self.width*0.45), height=110)
 
-
+        ################################################################## CREATE / IMPORT DECK (MASTER=self.frame1) ########################################################################################
         #Create Deck button
         self.create_deck_button = tk.Button(
             self.frame1, 
@@ -62,22 +62,23 @@ class MTGDeckGUI:
         )
         self.create_deck_button.place(relx=0.01, y=5)
 
-        #Create Deck label
-        self.deck_name_entry = tk.Entry(self.frame1)
-        self.deck_name_entry.place(x=115, y=5, relwidth=0.48)
-
+               
         #import deck button
-        self.create_deck_button = tk.Button(
+        self.import_deck_button = tk.Button(
             self.frame1, 
             width=12 ,
             text="Import Deck", 
             bootstyle='outline' ,
             command=self.import_deck
         )
-        self.create_deck_button.place(relx=0.69, y=5)
+        self.import_deck_button.place(relx=0.69, y=5)
+
+        #Create Deck label
+        self.deck_name_entry = tk.Entry(self.frame1)
+        self.deck_name_entry.place(x=115, y=5, relwidth=0.48)
 
 
-
+        ################################################################## ADD / REMOVE CARDS (MASTER=self.frame1) ########################################################################################
         #add card button
         self.add_card_button = tk.Button(
             self.frame1, 
@@ -112,11 +113,7 @@ class MTGDeckGUI:
         self.remove_card_button.place(relx=0.8, y=45)
         
 
-
-        # #Deck info table
-        # self.cards_label = tk.Label(self.root, text="Deck Info:", font=('default', 16))
-        # self.cards_label.place(x=10, y=110)
-
+        ################################################################## DECK TABLE (MASTER=self.root) ##################################################################
         #Deck table initialization:
         coldata = [
             {"text": "Nº", "stretch": True, 'width':int(self.width*0.02)},
@@ -128,7 +125,6 @@ class MTGDeckGUI:
         rowdata = [
         ]
 
-    
         self.deck_table = Tableview(
             master=self.root,
             coldata=coldata,
@@ -141,8 +137,8 @@ class MTGDeckGUI:
         )
         self.deck_table.place(x=10, y=150, width=int(self.width*0.45), height=self.height*0.95 )
 
-        
-        
+
+        ################################################################## DECK IMAGE, PLOTS, SYNERGIES (MASTER=self.frame_2) ############################################
         #add image deck button
         self.add_image_button = tk.Button(
             self.frame_2, 
@@ -168,11 +164,12 @@ class MTGDeckGUI:
             self.frame_2, 
             bootstyle="outline",
             width=15, 
-            text="Show synergies", 
-            command=self.show_mana_curve
+            text="Show synergies"
+            #command=self.show_mana_curve
         )
         self.add_syn_button.place(relx=0.85, rely=0.5, anchor="center")
         
+
         # Bind the <Configure> event of self.root to a function that sets the height of self.deck_table
         self.root.bind("<Configure>", self.on_window_resize)
 
@@ -253,7 +250,10 @@ class MTGDeckGUI:
         if repeated_cards < 1:
             Messagebox.show_error('Please select more than one card.')
         else:
-            self.deck.remove_card(name_of_card, repeated_cards)
+            result = self.deck.remove_card(name_of_card, repeated_cards)
+            if not result:
+                Messagebox.show_error('Card not found.')
+                #self.card_name_entry.delete(0, 'end')
 
         self.update_values()
 
@@ -269,6 +269,9 @@ class MTGDeckGUI:
             else:
                 print('No se detecta el nombre de {}'.format(card.get("name")))
                 self.deck_table.insert_row('end', [card.get("count"), card.get("type_line") , str(card.get("power")), str(card.get("toughness")), str(card.get("printed_text"))])
+            if card.get('count') <= 0:
+                self.deck.cards.remove(card)
+                
         self.deck_table.reset_table()
         self.show_mana_curve()
         #self.show_deck_image()

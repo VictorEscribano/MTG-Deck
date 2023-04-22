@@ -1,5 +1,19 @@
 [
     {
+        "url": "https://cards.scryfall.io/small/front/e/3/e3a33b71-e40f-442b-855d-54766641b4f8.jpg?1562882251",
+        "name": "Nim t\u00f3xico",
+        "mana_cost": "{4}{B}{B}",
+        "cmc": 6.0,
+        "type_line": "Creature \u2014 Phyrexian Zombie",
+        "power": "4",
+        "toughness": "1",
+        "keywords": [
+            "Infect"
+        ],
+        "printed_text": "Infectar. (Esta criatura hace da\u00f1o a las criaturas en forma de contadores -1/-1 y a los jugadores en forma de contadores de veneno.)\n{B}: Regenera al Nim t\u00f3xico.",
+        "count": 1
+    },
+    {
         "url": "https://cards.scryfall.io/small/front/9/7/9712623e-6f2e-4196-81ad-e8d896a0ab8a.jpg?1562879957",
         "name": "Segador de Sheoldred",
         "mana_cost": "{4}{B}",
@@ -141,20 +155,6 @@
         "toughness": null,
         "keywords": [],
         "printed_text": "({T}: Add {B}.)",
-        "count": 12
-    },
-    {
-        "url": "https://cards.scryfall.io/small/front/e/3/e3a33b71-e40f-442b-855d-54766641b4f8.jpg?1562882251",
-        "name": "Nim t\u00f3xico",
-        "mana_cost": "{4}{B}{B}",
-        "cmc": 6.0,
-        "type_line": "Creature \u2014 Phyrexian Zombie",
-        "power": "4",
-        "toughness": "1",
-        "keywords": [
-            "Infect"
-        ],
-        "printed_text": "Infectar. (Esta criatura hace da\u00f1o a las criaturas en forma de contadores -1/-1 y a los jugadores en forma de contadores de veneno.)\n{B}: Regenera al Nim t\u00f3xico.",
-        "count": 0
+        "count": 8
     }
 ]

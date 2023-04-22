@@ -1,0 +1,66 @@
+[
+    {
+        "url": "https://cards.scryfall.io/small/front/8/8/888cdb76-d365-41df-8b6a-378ac58ca8b2.jpg?1680827553",
+        "name": "Swamp",
+        "mana_cost": "",
+        "cmc": 0.0,
+        "type_line": "Basic Land \u2014 Swamp",
+        "power": null,
+        "toughness": null,
+        "keywords": [],
+        "printed_text": "({T}: Add {B}.)",
+        "count": 7
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/5/8/5823990c-8d40-4352-8d34-74332934adb2.jpg?1562877774",
+        "name": "Toxic Nim",
+        "mana_cost": "{4}{B}{B}",
+        "cmc": 6.0,
+        "type_line": "Creature \u2014 Phyrexian Zombie",
+        "power": "4",
+        "toughness": "1",
+        "keywords": [
+            "Infect"
+        ],
+        "printed_text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\n{B}: Regenerate Toxic Nim.",
+        "count": 3
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/3/6/36eb220b-9410-452c-9164-5f516aefd245.jpg?1645472243",
+        "name": "Myr de oro",
+        "mana_cost": "{2}",
+        "cmc": 2.0,
+        "type_line": "Artifact Creature \u2014 Myr",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "{T}: Agrega {W}.",
+        "count": 1
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/e/9/e923033f-6375-4e38-9197-adf95f3ceff3.jpg?1645508920",
+        "name": "Cieno depredador",
+        "mana_cost": "{G}{G}{G}",
+        "cmc": 3.0,
+        "type_line": "Creature \u2014 Ooze",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [
+            "Indestructible"
+        ],
+        "printed_text": "Indestructible.\nSiempre que el Cieno depredador ataque, pon un contador +1/+1 sobre \u00e9l.\nSiempre que una criatura que haya recibido da\u00f1o del Cieno depredador este turno muera, pon un contador +1/+1 sobre el Cieno depredador.",
+        "count": 6
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/f/9/f9cca423-baf7-42d3-978e-47b72122e0f8.jpg?1645474664",
+        "name": "Myr de plata",
+        "mana_cost": "{2}",
+        "cmc": 2.0,
+        "type_line": "Artifact Creature \u2014 Myr",
+        "power": "1",
+        "toughness": "1",
+        "keywords": [],
+        "printed_text": "{T}: Agrega {U}.",
+        "count": 6
+    }
+]

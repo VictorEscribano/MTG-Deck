@@ -1,9 +1,13 @@
 from MTGDeck import *
+import time
 
 # Create a new deck called "My Deck"
+start_time = time.time()
 deck = MagicDeck("testing")
+print(f"Deck initialization time: {time.time() - start_time:.2f}s")
 
 # Add some cards to the deck
+start_time = time.time()
 deck.add_card("nim toxico", 2)
 deck.add_card("segador de sheoldred", 1)
 deck.add_card("cosechar las tumbamarinas", 1)
@@ -17,12 +21,20 @@ deck.add_card("necrofago del matadero", 1)
 deck.add_card("desliz tragico", 1)
 deck.add_card("sed de sorin", 1)
 deck.add_card("Swamp", 8)
+print(f"Cards adding time: {time.time() - start_time:.2f}s")
 
-deck.remove_card('Nim tóxico')
+start_time = time.time()
+deck.remove_card('Nim tóxico', 1)
+print(f"Card removing time: {time.time() - start_time:.2f}s")
 
-deck.generate_mana_curve(style='dark_background', show_lands = False)
+start_time = time.time()
+deck.generate_mana_curve(style='dark_background', show_lands=False)
+print(f"Mana curve generation time: {time.time() - start_time:.2f}s")
 
+start_time = time.time()
 deck.save_deck()
+print(f"Deck saving time: {time.time() - start_time:.2f}s")
 
+start_time = time.time()
 deck.generate_image()
-
+print(f"Image generation time: {time.time() - start_time:.2f}s")
