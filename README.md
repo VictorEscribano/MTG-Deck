@@ -24,7 +24,7 @@ This will also output 1 .json file containing all the necessary information with
 It also outputs a more grafic representation of the mana curve, with the cards displayed horizkontal and vertically with respect its mana cost.
 Here we can see a Jumpstart Zombie deck and apreciate the balance of mana cost:
 
-![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Decks/Toxico%20Zombie/deck.png)
+![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/tritones.png)
 
 
 
