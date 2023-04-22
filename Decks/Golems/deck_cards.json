@@ -120,5 +120,19 @@
         "keywords": [],
         "printed_text": "({T}: Add {W}.)",
         "count": 8
+    },
+    {
+        "url": "https://cards.scryfall.io/small/front/e/3/e3a33b71-e40f-442b-855d-54766641b4f8.jpg?1562882251",
+        "name": "Nim t\u00f3xico",
+        "mana_cost": "{4}{B}{B}",
+        "cmc": 6.0,
+        "type_line": "Creature \u2014 Phyrexian Zombie",
+        "power": "4",
+        "toughness": "1",
+        "keywords": [
+            "Infect"
+        ],
+        "printed_text": "Infectar. (Esta criatura hace da\u00f1o a las criaturas en forma de contadores -1/-1 y a los jugadores en forma de contadores de veneno.)\n{B}: Regenera al Nim t\u00f3xico.",
+        "count": 6
     }
 ]
