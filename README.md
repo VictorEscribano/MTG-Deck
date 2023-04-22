@@ -22,10 +22,9 @@ The program has a simple and easy to use interface:
 
 This tool is still in development, and there are several possible improvements and extensions that could be added in the future. Some ideas include:
 
-- Adding the image mana cost to the GUI
-- Add synergy graph based on the 17Lands API using the GIH (Game in Hand) metric
-- Apply dimensionality reduction techniques to see the less relevant cards of the deck.
-- Adding support for different output formats (e.g. CSV, Excel, LaTeX).
-- Implementing more sophisticated analysis of the deck's mana curve (e.g. calculating the average mana cost, detecting color imbalances).
-- Add price curve
-- Adding support for other deck formats (e.g. Commander, Limited).
+- ✅ Add deck price
+- ✅ Adding the image mana cost to the GUI
+- ⬜ Add synergy graph based on the 17Lands API using the GIH (Game in Hand) metric
+- ⬜ Apply dimensionality reduction techniques to see the less relevant cards of the deck.
+- ⬜ Implementing more sophisticated analysis of the deck's mana curve (e.g. calculating the average mana cost, detecting color imbalances).
+- ⬜ Adding support for other deck formats (e.g. Commander, Limited).
