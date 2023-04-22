@@ -18,16 +18,6 @@ The program has a simple and easy to use interface:
 ![GUI](https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/GUI_image.PNG)
 
 
-## Outputs
-
-This will also output 1 .json file containing all the necessary information with respct the deck cards.
-It also outputs a more grafic representation of the mana curve, with the cards displayed horizkontal and vertically with respect its mana cost.
-Here we can see a Jumpstart Triton deck and apreciate the balance of mana cost:
-
-![Mana curve](https://github.com/VictorEscribano/MTG-Deck/blob/main/Graphic%20Material/tritones.png)
-
-
-
 ## Future work
 
 This tool is still in development, and there are several possible improvements and extensions that could be added in the future. Some ideas include:
