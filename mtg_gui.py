@@ -375,6 +375,6 @@ class MTGDeckGUI:
         
 
 if __name__ == "__main__":
-    root = tk.Window(themename="superhero", alpha=0.98, resizable=[640, 480], iconphoto='icons/magic.png', title='MTG Deck Builder')
+    root = tk.Window(themename="superhero", alpha=0.98, resizable=[640, 480], iconphoto='icons/magic.png', title='MTG Deck Builder') #solar
     mtg_deck_gui = MTGDeckGUI(root)
     root.mainloop()
