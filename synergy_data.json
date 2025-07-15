@@ -1,0 +1,5 @@
+{
+  "Zombie": {"Zombie": 1.0, "Wizard": 0.75, "Goblin": 0.4},
+  "Wizard": {"Zombie": 0.75, "Wizard": 1.0, "Goblin": 0.5},
+  "Goblin": {"Zombie": 0.4, "Wizard": 0.5, "Goblin": 1.0}
+}

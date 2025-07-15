@@ -6,6 +6,10 @@ sys.modules['PIL.Image'] = types.ModuleType('PIL.Image')
 sys.modules['matplotlib'] = types.ModuleType('matplotlib')
 sys.modules['matplotlib.pyplot'] = types.ModuleType('matplotlib.pyplot')
 sys.modules['numpy'] = types.ModuleType('numpy')
+sys.modules['mpl_toolkits'] = types.ModuleType('mpl_toolkits')
+mpl_toolkits_mod = types.ModuleType('mpl_toolkits.mplot3d')
+mpl_toolkits_mod.Axes3D = object
+sys.modules['mpl_toolkits.mplot3d'] = mpl_toolkits_mod
 
 from MTGDeck import MagicDeck
 
@@ -35,5 +39,5 @@ def test_synergy_matrix():
     ]
     matrix, names = deck.compute_synergy_matrix()
     assert names == ['Card A', 'Card B']
-    assert abs(matrix[0][1] - 0.5) < 1e-6
+    assert abs(matrix[0][1] - 0.875) < 1e-6
     assert matrix[0][0] == 1

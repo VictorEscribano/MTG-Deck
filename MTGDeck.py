@@ -4,6 +4,7 @@ import requests
 from PIL import Image
 from io import BytesIO
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
 import numpy as np
 
 class MagicDeck:
@@ -142,6 +143,20 @@ class MagicDeck:
 
         return fig
 
+    def load_synergy_data(self, path="synergy_data.json"):
+        """Load subtype synergy scores from a local JSON file."""
+        if not hasattr(self, "synergy_data"):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    self.synergy_data = json.load(f)
+            except FileNotFoundError:
+                self.synergy_data = {}
+
+    def get_synergy_score(self, subtype_a, subtype_b):
+        """Return a synergy score between two subtypes."""
+        self.load_synergy_data()
+        return self.synergy_data.get(subtype_a, {}).get(subtype_b, 0.0)
+
     def _parse_subtypes(self, type_line):
         """Extract creature or card subtypes from a type line."""
         if not type_line:
@@ -157,15 +172,21 @@ class MagicDeck:
         return set([s for s in cleaned.split() if s])
 
     def compute_synergy_matrix(self):
-        """Return a matrix with pairwise subtype similarities between cards."""
-        names = [card.get('name') for card in self.cards]
-        subtypes = [self._parse_subtypes(card.get('type_line')) for card in self.cards]
+        """Return a matrix with pairwise subtype synergies between cards."""
+        names = [card.get("name") for card in self.cards]
+        subtypes = [self._parse_subtypes(card.get("type_line")) for card in self.cards]
         n = len(names)
         matrix = [[0.0 for _ in range(n)] for _ in range(n)]
         for i in range(n):
             for j in range(i, n):
-                union = subtypes[i] | subtypes[j]
-                score = len(subtypes[i] & subtypes[j]) / len(union) if union else 0
+                if not subtypes[i] or not subtypes[j]:
+                    score = 0.0
+                else:
+                    scores = []
+                    for s1 in subtypes[i]:
+                        for s2 in subtypes[j]:
+                            scores.append(self.get_synergy_score(s1, s2))
+                    score = sum(scores) / len(scores) if scores else 0.0
                 matrix[i][j] = matrix[j][i] = score
         return matrix, names
 
@@ -180,6 +201,25 @@ class MagicDeck:
         ax.set_yticklabels(names, fontsize=6)
         fig.colorbar(cax, ax=ax, label='Synergy')
         ax.set_title('Card Synergy')
+        fig.tight_layout()
+        return fig
+
+    def generate_synergy_3d_plot(self):
+        """Generate a 3D surface plot showing card synergies."""
+        matrix, names = self.compute_synergy_matrix()
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection="3d")
+        x = np.arange(len(names))
+        y = np.arange(len(names))
+        X, Y = np.meshgrid(x, y)
+        Z = np.array(matrix)
+        ax.plot_surface(X, Y, Z, cmap="YlGnBu")
+        ax.set_xticks(x)
+        ax.set_yticks(y)
+        ax.set_xticklabels(names, rotation=90, fontsize=6)
+        ax.set_yticklabels(names, fontsize=6)
+        ax.set_zlabel("Synergy")
+        ax.set_title("Card Synergy 3D")
         fig.tight_layout()
         return fig
 

@@ -163,7 +163,7 @@ class MTGDeckGUI:
         )
         self.add_plot_button.place(relx=0.5, rely=0.5, anchor="center")
 
-        #add plot synergy button
+        # add plot synergy button
         self.add_syn_button = tk.Button(
             self.frame_2,
             bootstyle="outline",
@@ -171,7 +171,17 @@ class MTGDeckGUI:
             text="Show synergies",
             command=self.show_synergy_map
         )
-        self.add_syn_button.place(relx=0.85, rely=0.5, anchor="center")
+        self.add_syn_button.place(relx=0.75, rely=0.5, anchor="center")
+
+        # add 3D synergy button
+        self.add_syn3d_button = tk.Button(
+            self.frame_2,
+            bootstyle="outline",
+            width=15,
+            text="Show 3D synergies",
+            command=self.show_synergy_3d_map
+        )
+        self.add_syn3d_button.place(relx=0.90, rely=0.5, anchor="center")
         
         # Bind the <Configure> event of self.root to a function that sets the height of self.deck_table
         self.root.bind("<Configure>", self.on_window_resize)
@@ -330,6 +340,21 @@ class MTGDeckGUI:
         self.empty_frame(self.label_frame)
 
         fig = self.deck.generate_synergy_plot()
+        fig.set_size_inches(3, 5)
+        fig.tight_layout()
+
+        self.canvas_plot = FigureCanvasTkAgg(fig, master=self.label_frame)
+        self.canvas_plot.draw()
+        self.canvas_plot.get_tk_widget().place(x=0, y=0, width=self.label_frame.winfo_width(), height=self.label_frame.winfo_height())
+
+    def show_synergy_3d_map(self):
+        """Display a 3D surface of card synergies."""
+        if self.canvas_plot:
+            self.canvas_plot.get_tk_widget().destroy()
+
+        self.empty_frame(self.label_frame)
+
+        fig = self.deck.generate_synergy_3d_plot()
         fig.set_size_inches(3, 5)
         fig.tight_layout()
 

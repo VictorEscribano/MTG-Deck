@@ -12,7 +12,8 @@ Follow these steps:
   - Ceate deck with custom name
   - Add/Remove cards to the created Deck (The deck is saved automatically)
   - If you have Decks already created you can load those decks and work with it
-  - Visualize a synergy heatmap between the cards in the deck
+  - Visualize a synergy heatmap or 3D surface showing card synergies
+    based on subtype scores stored in `synergy_data.json`
 
 The program has a simple and easy to use interface:
 
@@ -35,6 +36,7 @@ This tool is still in development, and there are several possible improvements a
 
 - Adding the image mana cost to the GUI
 - Integrate 17Lands API data to enhance the synergy analysis
+- Add a 3D synergy visualization based on the MTG MetaSyn dataset
 - Apply dimensionality reduction techniques to see the less relevant cards of the deck.
 - Adding support for different output formats (e.g. CSV, Excel, LaTeX).
 - Implementing more sophisticated analysis of the deck's mana curve (e.g. calculating the average mana cost, detecting color imbalances).
