@@ -175,7 +175,7 @@ class MTGDeckGUI:
         self.add_syn_button.place(relx=0.85, rely=0.5, anchor="center")
 
 
-        ################################################################## DECK IFNO (MASTER=self.frame3) ########################################################################################
+        ################################################################## DECK INFO (MASTER=self.frame3) ########################################################################################
         #add deck size label
         self.deck_size_label = tk.Label(
             self.frame3, 
@@ -206,7 +206,7 @@ class MTGDeckGUI:
         #print(self.height)
 
     def update_sizes(self):
-        #Update lable frames:
+        #Update label frames:
         self.label_frame.place(x=int(self.width*0.50), y=150, width=int(self.width*0.49), height=(self.height*0.78))
         self.frame2.place(x=int(self.width*0.50), y=10, width=int(self.width*0.49), height=110)
         self.frame1.place(x=10, y=10, width=int(self.width*0.45), height=110)
