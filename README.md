@@ -9,7 +9,7 @@ Follow these steps:
 1. Clone this repository to your local machine.
 2. Install the required dependencies by running `pip install -r requirements.txt`.
 3. Open the GUI. The main functionalities are:
-  - Ceate deck with custom name
+  - Create deck with custom name
   - Add/Remove cards to the created Deck (The deck is saved automatically)
   - If you have Decks already created you can load those decks and work with it
 
