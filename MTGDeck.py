@@ -135,8 +135,7 @@ class MagicDeck:
             print(card.get("name"))
             if card.get("name") == card_name:
                 return card.get("count")
-            else:
-                return 0
+        return 0
 
     def how_many_cards(self):
         total = 0
@@ -220,7 +219,7 @@ class MagicDeck:
         else:
             print("Error: No card images found")
 
-        return combined_image
+        return combined_image if card_images else None
 
 
     def combine_images(self, images, orientation, width=None, overlap=0):
