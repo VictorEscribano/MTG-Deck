@@ -12,6 +12,7 @@ Follow these steps:
   - Ceate deck with custom name
   - Add/Remove cards to the created Deck (The deck is saved automatically)
   - If you have Decks already created you can load those decks and work with it
+  - Visualize a synergy heatmap between the cards in the deck
 
 The program has a simple and easy to use interface:
 
@@ -33,7 +34,7 @@ Here we can see a Jumpstart Zombie deck and apreciate the balance of mana cost:
 This tool is still in development, and there are several possible improvements and extensions that could be added in the future. Some ideas include:
 
 - Adding the image mana cost to the GUI
-- Add synergy graph based on the 17Lands API using the GIH (Game in Hand) metric
+- Integrate 17Lands API data to enhance the synergy analysis
 - Apply dimensionality reduction techniques to see the less relevant cards of the deck.
 - Adding support for different output formats (e.g. CSV, Excel, LaTeX).
 - Implementing more sophisticated analysis of the deck's mana curve (e.g. calculating the average mana cost, detecting color imbalances).

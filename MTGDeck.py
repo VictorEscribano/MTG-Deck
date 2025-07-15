@@ -140,7 +140,48 @@ class MagicDeck:
         ax.set_ylabel("Number of Cards")
         ax.set_title("Mana Curve")
 
-        return fig  
+        return fig
+
+    def _parse_subtypes(self, type_line):
+        """Extract creature or card subtypes from a type line."""
+        if not type_line:
+            return set()
+        if '—' in type_line:
+            subtype_part = type_line.split('—', 1)[1]
+        elif '-' in type_line:
+            subtype_part = type_line.split('-', 1)[1]
+        else:
+            return set()
+        # Remove punctuation and split into words
+        cleaned = subtype_part.replace(',', ' ').replace('\u2014', ' ')
+        return set([s for s in cleaned.split() if s])
+
+    def compute_synergy_matrix(self):
+        """Return a matrix with pairwise subtype similarities between cards."""
+        names = [card.get('name') for card in self.cards]
+        subtypes = [self._parse_subtypes(card.get('type_line')) for card in self.cards]
+        n = len(names)
+        matrix = [[0.0 for _ in range(n)] for _ in range(n)]
+        for i in range(n):
+            for j in range(i, n):
+                union = subtypes[i] | subtypes[j]
+                score = len(subtypes[i] & subtypes[j]) / len(union) if union else 0
+                matrix[i][j] = matrix[j][i] = score
+        return matrix, names
+
+    def generate_synergy_plot(self):
+        """Generate a heatmap showing card synergies."""
+        matrix, names = self.compute_synergy_matrix()
+        fig, ax = plt.subplots()
+        cax = ax.imshow(matrix, cmap='YlGnBu', vmin=0, vmax=1)
+        ax.set_xticks(range(len(names)))
+        ax.set_yticks(range(len(names)))
+        ax.set_xticklabels(names, rotation=90, fontsize=6)
+        ax.set_yticklabels(names, fontsize=6)
+        fig.colorbar(cax, ax=ax, label='Synergy')
+        ax.set_title('Card Synergy')
+        fig.tight_layout()
+        return fig
 
     def generate_image(self):
         # Get the card images
