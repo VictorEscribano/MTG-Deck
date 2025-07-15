@@ -178,6 +178,12 @@ class MagicDeck:
         return fig  
 
     def generate_image(self):
+        """Generate and save a combined image of all cards in the deck.
+
+        Returns the created :class:`PIL.Image.Image` or ``None`` when no card
+        images are available.
+        """
+
         # Get the card images
         card_images = {}
         for card in self.cards:
@@ -216,10 +222,10 @@ class MagicDeck:
 
             # Save the combined image
             combined_image.save(f"Decks/{self.name}/deck.png")
+            return combined_image
         else:
             print("Error: No card images found")
-
-        return combined_image if card_images else None
+            return None
 
 
     def combine_images(self, images, orientation, width=None, overlap=0):
