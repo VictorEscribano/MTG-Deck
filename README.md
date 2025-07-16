@@ -12,8 +12,9 @@ Follow these steps:
   - Ceate deck with custom name
   - Add/Remove cards to the created Deck (The deck is saved automatically)
   - If you have Decks already created you can load those decks and work with it
-  - Visualize a synergy heatmap or 3D surface showing card synergies
-    based on subtype scores stored in `synergy_data.json`
+  - Visualize a synergy heatmap or 3D surface showing card synergies.
+    The subtype synergy dataset is automatically built on first run using
+    data from the magicthegathering.io API.
 
 The program has a simple and easy to use interface:
 

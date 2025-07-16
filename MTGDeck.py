@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+import urllib.request
 from PIL import Image
 from io import BytesIO
 import matplotlib.pyplot as plt
@@ -144,13 +145,50 @@ class MagicDeck:
         return fig
 
     def load_synergy_data(self, path="synergy_data.json"):
-        """Load subtype synergy scores from a local JSON file."""
-        if not hasattr(self, "synergy_data"):
+        """Load subtype synergy scores, building them from the API if needed."""
+        if hasattr(self, "synergy_data"):
+            return
+        if os.path.exists(path):
             try:
                 with open(path, "r", encoding="utf-8") as f:
                     self.synergy_data = json.load(f)
-            except FileNotFoundError:
-                self.synergy_data = {}
+                return
+            except Exception:
+                pass
+        # If the file does not exist or failed to load, attempt to build it
+        try:
+            self.build_synergy_data_from_api(path)
+        except Exception:
+            self.synergy_data = {}
+
+    def build_synergy_data_from_api(self, path="synergy_data.json", pages=10, page_size=100):
+        """Create a synergy dataset by querying the magicthegathering.io API."""
+        base_url = "https://api.magicthegathering.io/v1/cards"
+        synergy_counts = {}
+        for page in range(1, pages + 1):
+            url = f"{base_url}?page={page}&pageSize={page_size}"
+            try:
+                with urllib.request.urlopen(url) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+            except Exception:
+                break
+            for card in data.get("cards", []):
+                subtypes = card.get("subtypes", [])
+                if not subtypes:
+                    continue
+                for s1 in subtypes:
+                    synergy_counts.setdefault(s1, {})
+                    for s2 in subtypes:
+                        synergy_counts[s1][s2] = synergy_counts[s1].get(s2, 0) + 1
+
+        synergy_scores = {}
+        for s1, inner in synergy_counts.items():
+            total = float(max(inner.values())) if inner else 1.0
+            synergy_scores[s1] = {s2: count / total for s2, count in inner.items()}
+
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(synergy_scores, f, indent=2)
+        self.synergy_data = synergy_scores
 
     def get_synergy_score(self, subtype_a, subtype_b):
         """Return a synergy score between two subtypes."""
